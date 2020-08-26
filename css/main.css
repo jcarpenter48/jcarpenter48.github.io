@@ -17,11 +17,13 @@ header__content-text {
 }
 
 page__content-container {
+	background: rgba(100, 50, 210, 0.56);	
   margin: 100px auto;
   width: 975px;
   padding: 30px;
 }
 body {
+	background: rgba(100, 50, 210, 0.56);
     margin: 60px auto;
     width: 70%;
 }
