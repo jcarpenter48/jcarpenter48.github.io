@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.lang.*;
+import java.math;
 import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.*;
@@ -12,328 +13,111 @@ public class MassOfAtmosphereCalculator extends JPanel
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 7984592406346035387L;
+	private static final long serialVersionUID = 8984592406346035387L;
 	public static double ERROR = -999.0;
 	private static Scanner sc;
 
-    private static JComboBox approximationtype; //which rule to use (Trapezoidal, Midpoint, Simpson)
-
-    private static JTextField textField; //lower bounds (a)
-    private static JTextField textField2; //upper bounds (b)
-    private static JTextField textField3; //number of divisions (n)
-    private static JTextField textField4; //second or fourth derivative	
+    private static JTextField textField; //pressure (p)
+    private static JTextField textField2; //radius (r)
+    private static JTextField textField3; //acceleration due to gravity (g)	
 	
-	private static JTextField approximationresult;
+	private static JTextField calculationResult;
 
-	public IntegralApproximationCalculator()
+	public MassOfAtmosphereCalculator()
 	{
 		super(new BorderLayout());
 		// layout of window
-        JPanel labelPanel = new JPanel(new GridLayout(6, 2)); // 6 rows 2 columns
+        JPanel labelPanel = new JPanel(new GridLayout(4, 2)); // 4 rows 2 columns
         add(labelPanel, BorderLayout.WEST);
-        JPanel fieldPanel = new JPanel(new GridLayout(6, 2)); // 6 rows 2 columns
+        JPanel fieldPanel = new JPanel(new GridLayout(4, 2)); // 4 rows 2 columns
         add(fieldPanel, BorderLayout.CENTER);
 
-        JLabel labelDeriv = new JLabel("Second Derivative:");
-		
-        // select between approximation rules
-        JLabel labelCombo = new JLabel("Approximation Rule:");
-        String[] options = { "Trapezoidal Approximation Error", "Midpoint Approximation Error", "Simpson Approximation Error" };
-        approximationtype = new JComboBox(options);
-        approximationtype.addActionListener(new ActionListener() 
-		{
-			String choice;
-            @Override
-            public void actionPerformed(ActionEvent e) 
-			{
-				choice = (String) approximationtype.getSelectedItem();
-                if(choice.equals("Simpson Approximation Error"))
-				{
-					labelDeriv.setText("Fourth Derivative:");
-				}
-				else
-				{
-					labelDeriv.setText("Second Derivative:");
-				}
-            } //see above
-        }); //end of approximationtype ActionListener
-
-        JLabel labelLower = new JLabel("Lower Bounds (a):");
+        JLabel labelPressure = new JLabel("Pressure (Pascals):");
         textField = new JTextField();		
-		JLabel labelUpper = new JLabel("Upper Bounds (b):");
+		JLabel labelRadius = new JLabel("Radius (Meters):");
         textField2 = new JTextField();
-        JLabel labelDivisions = new JLabel("Number of Divisions (n):");
+        JLabel labelAccel = new JLabel("Acceleration due to Gravity (m/s^2):");
         textField3 = new JTextField();
-
-        textField4 = new JTextField();		
-		JLabel finalResultLabel = new JLabel("Result:");		
-		approximationresult = new JTextField();
 		
-        labelPanel.add(labelCombo);	
-        labelPanel.add(labelLower);
-        labelPanel.add(labelUpper);
-        labelPanel.add(labelDivisions);
-        labelPanel.add(labelDeriv);	
+		JLabel finalResultLabel = new JLabel("Result:");		
+		calculationResult = new JTextField();
+		
+        labelPanel.add(labelPressure);
+        labelPanel.add(labelRadius);
+        labelPanel.add(labelAccel);
         labelPanel.add(finalResultLabel);		
 
-        fieldPanel.add(approximationtype);
         fieldPanel.add(textField);
         fieldPanel.add(textField2);		
-        fieldPanel.add(textField3);
-        fieldPanel.add(textField4);		
-			fieldPanel.add(approximationresult);
-    } //end of Public IntegralErrorCalculator
+        fieldPanel.add(textField3);	
+			fieldPanel.add(calculationResult);
+    } //end of Public MassOfAtmosphereCalculator
 	
 	public static void main(String[] args)
 	{
-		final IntegralApproximationCalculator form = new IntegralApproximationCalculator();
+		final MassOfAtmosphereCalculator form = new MassOfAtmosphereCalculator();
 		
 		//calculate result button
-		JButton submit = new JButton("Calculate Approximation Error");
+		JButton submit = new JButton("Calculate Mass of Atmosphere");
         submit.addActionListener(new ActionListener() 
 		{
             @Override
             public void actionPerformed(ActionEvent e) 
 			{
-                calculateResult((String) approximationtype.getSelectedItem(), textField.getText(), textField2.getText(), textField3.getText(), textField4.getText());
+                calculateResult(textField.getText(), textField2.getText(), textField3.getText());
             } //end of actionPerformed
         }); //end of Calculate button
 		
         // program frame
-		JFrame guiFrame = new JFrame("Integral Approximation Error Calculator");
+		JFrame guiFrame = new JFrame("Mass of Atmosphere Calculator");
         guiFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
-		guiFrame.setSize(600,400);
+		guiFrame.setSize(800,600);
 					guiFrame.setLocationRelativeTo(null);
         guiFrame.getContentPane().add(form, BorderLayout.NORTH);
         JPanel p = new JPanel();
         p.add(submit);
         guiFrame.getContentPane().add(p, BorderLayout.SOUTH);
-        guiFrame.pack();
+        //guiFrame.pack();
         guiFrame.setVisible(true);	
+        guiFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
 	} //just assembles the GUI and holds the trigger for calculating the result
 	
-	private static void calculateResult(String approximationSelect, String lower, String upper, String nvalue, String derivativeStr)
+	private static void calculateResult(String pressureStr, String radiusStr, String accelStr)
 	{
-		if(approximationSelect.equals("Midpoint Approximation Error")) //midpoint
-		{
-			double b;
-			double a;
-			double n;
+			double p;
+			double r;
+			double g;
 			
-			b = Convert.Parse(upper, ERROR);
-			a = Convert.Parse(lower, ERROR);
-			n = Convert.Parse(nvalue, ERROR);
+			radiusStr = radiusStr.replaceAll("[()]", "");
 			
-			double K = 0.0;
+			p = Convert.Parse(pressureStr, ERROR);
+			r = Convert.Parse(radiusStr, ERROR);
+			g = Convert.Parse(accelStr, ERROR);
 			
-			System.out.println("Entering second derivative");
-			Expression secondderivativeExp = new ExpressionBuilder(derivativeStr)
-				.variables("x")
-				.build();
-			K = calculateKVal(secondderivativeExp, a, b);
+			System.out.println(""+radiusStr);
 			
-			double ErrorMidpoint;
-			double badifference = Math.pow((b-a),3);
-			double nsquared = Math.pow(n,2);
-			ErrorMidpoint = (K*(badifference))/(24*(nsquared));
+			double atmosphericMass;
+			double temp = 0;
+			temp = 4*Math.PI*(Math.pow(r, 2));
+			
+			atmosphericMass = (temp*p)/g;
 
-			System.out.println("\nN Value: "+nvalue);
-			System.out.println("Upper Bound: "+b);
-			System.out.println("Lower Bound: "+a);
-			System.out.println("\nError Midpoint <= "+ErrorMidpoint);		
+			System.out.println("\nPressure: "+p);
+			System.out.println("Radius: "+r);
+			System.out.println("Acceleration due to Gravity: "+g);
+			System.out.println("\nAtmospheric Mass <= "+atmosphericMass);		
 			
-			approximationresult.setText(ErrorMidpoint+"");				
-		}
-		else if(approximationSelect.equals("Simpson Approximation Error")) //simpsons
-		{
-			double b;
-			double a;
-			double n;
-			
-			b = Convert.Parse(upper, ERROR);
-			a = Convert.Parse(lower, ERROR);
-			n = Convert.Parse(nvalue, ERROR);
-			
-			double K = 0.0;
-			
-			System.out.println("Entering fourth derivative");
-			Expression fourthderivativeExp = new ExpressionBuilder(derivativeStr)
-				.variables("x")
-				.build();
-			K = calculateKVal(fourthderivativeExp, a, b);
-			
-			double ErrorSimpson;
-			double badifference = Math.pow((b-a),3);
-			double nfourth = Math.pow(n,4);
-			ErrorSimpson = (K*(badifference))/(180*(nfourth));
-
-			System.out.println("\nN Value: "+nvalue);
-			System.out.println("Upper Bound: "+b);
-			System.out.println("Lower Bound: "+a);
-			System.out.println("\nError Simpson <= "+ErrorSimpson);		
-			
-			approximationresult.setText(ErrorSimpson+"");				
-		}
-		else //trapezoidal
-		{
-			double b;
-			double a;
-			double n;
-			
-			b = Convert.Parse(upper, ERROR);
-			a = Convert.Parse(lower, ERROR);
-			n = Convert.Parse(nvalue, ERROR);
-			
-			double K = 0.0;
-			
-			System.out.println("Entering second derivative");
-			Expression secondderivativeExp = new ExpressionBuilder(derivativeStr)
-				.variables("x")
-				.build();
-			K = calculateKVal(secondderivativeExp, a, b);
-			
-			double ErrorTrapezoidal;
-			double badifference = Math.pow((b-a),3);
-			double nsquared = Math.pow(n,2);
-			ErrorTrapezoidal = (K*(badifference))/(12*(nsquared));
-
-			System.out.println("\nN Value: "+nvalue);
-			System.out.println("Upper Bound: "+b);
-			System.out.println("Lower Bound: "+a);
-			System.out.println("\nError Trapezoidal <= "+ErrorTrapezoidal);		
-			
-			approximationresult.setText(ErrorTrapezoidal+"");			
-		}
-	}
-	public static double calculateKVal(Expression e, double a, double b)
-	{
-		double maxValue = e.setVariable("x", a).evaluate();
-		for (double x = a, i = 0; x <= b; x += .1, i++)
-		{
-				double val = e.setVariable("x", x).evaluate();
-
-				if (val > maxValue)
-					maxValue = val;
-		}
-		/*Expression e = new ExpressionBuilder("3 * sin(y) - 2 / (x - 2)")
-		        .variables("x", "y")
-		        .build()
-		        .setVariable("x", 2.3)
-		        .setVariable("y", 3.14);
-				double result = e.evaluate();
-				System.out.println(""+result);*/
-		double kSolution = maxValue;
-		return kSolution;
+			if(r==-999.0) 
+			{
+				calculationResult.setText("Radius Set as ERROR. Did you enter radius in meters? "+atmosphericMass);
+			}
+			else
+			{
+				calculationResult.setText(atmosphericMass+"");				
+			}
 	}
 	
-	public static String inputXvar(String function)
-	{
-		int testXint = (5);
-		String alternative = function.replaceAll("x", "("+testXint+")");
-		
-		return alternative;
-	}
-	
-	public static interface Function 
-	{
-        public double f(double x);
-    }
-	
-	public static double findMax(Function f, double lowerBound, double upperBound, double step) 
-	{
-		double maxValue = f.f(lowerBound);
-
-		for (double i=lowerBound; i <= upperBound; i+=step) {
-			double currEval = f.f(i);
-			if (currEval > maxValue) {
-				maxValue = currEval;
-			}
-		}
-
-		return maxValue;
-	}
-	
-	public static double eval(final String str) 
-	{
-		return new Object() {
-			int pos = -1, ch;
-
-			void nextChar() {
-				ch = (++pos < str.length()) ? str.charAt(pos) : -1;
-			}
-
-			boolean eat(int charToEat) {
-				while (ch == ' ') nextChar();
-				if (ch == charToEat) {
-					nextChar();
-					return true;
-				}
-				return false;
-			}
-
-			double parse() {
-				nextChar();
-				double x = parseExpression();
-				if (pos < str.length()) throw new RuntimeException("Unexpected: " + (char)ch);
-				return x;
-			}
-
-			// Grammar:
-			// expression = term | expression `+` term | expression `-` term
-			// term = factor | term `*` factor | term `/` factor
-			// factor = `+` factor | `-` factor | `(` expression `)`
-			//        | number | functionName factor | factor `^` factor
-
-			double parseExpression() {
-				double x = parseTerm();
-				for (;;) {
-					if      (eat('+')) x += parseTerm(); // addition
-					else if (eat('-')) x -= parseTerm(); // subtraction
-					else return x;
-				}
-			}
-
-			double parseTerm() {
-				double x = parseFactor();
-				for (;;) {
-					if      (eat('*')) x *= parseFactor(); // multiplication
-					else if (eat('/')) x /= parseFactor(); // division
-					else return x;
-				}
-			}
-
-			double parseFactor() {
-				if (eat('+')) return parseFactor(); // unary plus
-				if (eat('-')) return -parseFactor(); // unary minus
-
-				double x;
-				int startPos = this.pos;
-				if (eat('(')) { // parentheses
-					x = parseExpression();
-					eat(')');
-				} else if ((ch >= '0' && ch <= '9') || ch == '.') { // numbers
-					while ((ch >= '0' && ch <= '9') || ch == '.') nextChar();
-					x = Double.parseDouble(str.substring(startPos, this.pos));
-				} else if (ch >= 'a' && ch <= 'z') { // functions
-					while (ch >= 'a' && ch <= 'z') nextChar();
-					String func = str.substring(startPos, this.pos);
-					x = parseFactor();
-					if (func.equals("sqrt")) x = Math.sqrt(x);
-					else if (func.equals("sin")) x = Math.sin(Math.toRadians(x));
-					else if (func.equals("cos")) x = Math.cos(Math.toRadians(x));
-					else if (func.equals("tan")) x = Math.tan(Math.toRadians(x));
-					else throw new RuntimeException("Unknown function: " + func);
-				} else {
-					throw new RuntimeException("Unexpected: " + (char)ch);
-				}
-
-				if (eat('^')) x = Math.pow(x, parseFactor()); // exponentiation
-
-				return x;
-			}
-		}.parse();
-	}
 
 	public static class Convert 
 	{
@@ -424,6 +208,6 @@ public class MassOfAtmosphereCalculator extends JPanel
 			return result;
 		}// end Parse;
 
-	} // end CSCIConvert
+	} // end Convert
 
 }
