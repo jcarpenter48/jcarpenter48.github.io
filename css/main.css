@@ -26,7 +26,7 @@ body {
     width: 70%;
 }
 nav ul, footer ul {
-    font-family:'Helvetica';
+    font-family:'American Typewriter';
     padding: 0px;
     list-style: none;
     font-weight: bold;
@@ -44,11 +44,12 @@ a:hover {
 }
 h1 {
     font-size: 3em;
-    font-family:'Helvetica';
+    font-family:'American Typewriter';
 }
 p {
+	background: rgba(100, 50, 210, 0.56);
     font-size: 1.5em;
-	font-family:'Helvetica';
+	font-family:'American Typewriter';
     line-height: 1.4em;
     color: #000000;
 }
