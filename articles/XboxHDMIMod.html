@@ -38,6 +38,49 @@
 		<div class="container">
     		<div class="blurb">
         		<h1>Xbox $4 Internal HDMI Mod</h1>
+                <p>
+                Since I had started messing with homebrew development and game modding on the original Xbox, I thought it would be nice to have 
+                built in HDMI output on the console to ease connecting the box up to modern monitors and televisions in proximity with my main computer.
+                As an added benefit, built in HDMI out would provide a much better guarantee I could hook the console up to a friend's or hotel's televisions
+                should I take the Xbox with me.
+                </p>
+                <p>
+                I was reticent to spend the $100 or so for one of the newer XboxHDMI or HD+ kits that grab raw digital video, though. I like my Xbox, but I don't know
+                if I'd say I like it *that* much. The component cables I've been using have been quite alright for me in terms of image quality, so something similar
+                to that would be fine. With that, I settled on picking up a Wii2HDMI adapter for $4 as a source for a cheap component to HDMI conversion board. Other people
+                had used Wii2HDMI for similar mods, so there was a good amount of information available for the straightforward pinout needed for this project.
+                </p>
+                <div class "imagecontainer"><img src="/articles/images/XboxHDMIMod/pinout.png" alt="pinout"> </div>
+                <p>
+                I'd heard mixed reviews about Wii2HDMI adapters, primarily concerning (a) color accuracy, and (b) image quality, particularly with respect to downgrades in
+                recent models coming out of Greater China in terms of the chip used for converting the signals. It seems most people swear by the MS9282.
+                I ended up with an adapter with an MS9288A on board, not well-liked in the community, and so I wasn't expecting much.
+                </p>
+                <div class "imagecontainer"><img src="/articles/images/XboxHDMIMod/hdmi_port_installed.jpg" alt="hdmi_port_installed"> </div>
+                <p>
+                Lo and behold, I soldered everything up, cut a hole in the case for the port, plugged it in, and... awful video quality! And not just that, but every few minutes, the image would warp at some point, like 
+                an old antenna TV signal nearly dropping out for a second. Needless to say, I was rather disappointed, and almost chalked the mod's quality up as the fault of the adapter board and chip.
+                In actuality, that was not the case.
+                </p> 
+                <p>Originally when I soldered it all up, I used some 24AWG solid core wire I had lying around, no shielding (obviously a mistake, in retrospect); I also didn't wire up a mode select
+                switch for the video output mode, no permanently ground those mode select points to force component out of the Xbox at all times. Instead, I relied on the mode select
+                switch on the component cables I had, which I decided to leave plugged in. These two factors were what contributed to the awful, noisy signal of the end result.
+                </p>                
+                <p>
+                As best I could tell, the lack of shielding on the video signal wires heading into the converter board allowed noise from some part of the console to interfere with the signal, and
+                having the component cables plugged in and still hooked up to the TV's component input also contributed to poorer image quality.
+                </p>
+                <p>
+                So, of course, I took it all apart again, this time taking much more care. I used twisted 34AWG magnet wire (effective 31AWG, thinner I know, but this did not prove a problem) shielded
+                with a ground wire twisted around for each video and audio signal. Additionally, unlike before, I did not have all signal connections share their ground connections, just to be on the safe side.
+                </p> 
+                <div class "imagecontainer"><img src="/articles/images/XboxHDMIMod/boardinstalled.jpg" alt="boardinstalled"> </div>
+                <p>I also added a mode select switch hidden behind the vents on the side of the console. This way, if I want to disable Component/HDMI out, I can take a pair of tweezers or ice pick and do so
+                without tearing the console apart again. Nice.</p>
+                <div class "imagecontainer"><img src="/articles/images/XboxHDMIMod/modeselect_switch.jpg" alt="modeselect_switch"> </div>
+                <p>And with that, the mod was completed! I could always go back and clean up the rear port cover, bonding it better to the case with Bondo, sanding, and painting it so it looks stock. I could
+                also devise a better mounting solution for the board besides hot glue, but the point of this mod was to be cheap. For $4, I'm pretty happy with the image quality and connectivity I achieved.</p>
+                <p></p>
     		</div><!-- /.blurb -->
 		</div><!-- /.container -->
 		<script data-ad-client="ca-pub-5897349726266398" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
