@@ -65,7 +65,6 @@ nav ul li, footer ul li {
 }
 a {
     text-decoration: none;
-    color: #000000;
 }
 a:hover {
     text-decoration: underline;
@@ -79,7 +78,6 @@ p {
     font-size: 1.5em;
 	font-family:'NSimSun';
     line-height: 1.4em;
-    color: #000000;
 }
 footer {
     border-top: 1px solid #d5d5d5;
@@ -95,7 +93,12 @@ ul.posts li {
     list-style: none;
 }
 
-.gsc-control-cse {
+div.gsc-control-cse {
+    background-color: #202020;
+    border: 1px solid #202020;
+}
+
+div.gsc-control-cse.gsc-control-cse-en {
     background-color: #202020;
     border: 1px solid #202020;
 }
