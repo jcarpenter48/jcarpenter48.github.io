@@ -3,10 +3,6 @@ html {
   background-size: cover;
   height: 100%;
   overflow: hidden;
-  background-color: #202020;
-    font-family: nsimsun;
-    color: #8ff1ec;
-    text-shadow: 0 0 2px #aefff7, 0 0 4px #a5ddda;      
 }
 
 header {
@@ -20,7 +16,7 @@ header {
   -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
   box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
-}    
+}
 
 header__content-text {
   text-align: center;
@@ -54,7 +50,7 @@ body {
   min-height: 50%;
 }
 nav ul, footer ul {
-    font-family:'NSimSun';
+    font-family:'American Typewriter';
     padding: 0px;
     list-style: none;
     font-weight: bold;
@@ -72,12 +68,12 @@ a:hover {
 }
 h1 {
     font-size: 3em;
-    font-family:'NSimSun';
+    font-family:'American Typewriter';
 }
 p {
 
     font-size: 1.5em;
-	font-family:'NSimSun';
+	font-family:'American Typewriter';
     line-height: 1.4em;
     color: #000000;
 }
@@ -93,9 +89,4 @@ ul.posts {
 
 ul.posts li {
     list-style: none;
-}
-
-.gsc-control-cse {
-    background-color: #202020;
-    border: 1px solid #202020;
 }
