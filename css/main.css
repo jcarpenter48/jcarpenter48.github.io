@@ -120,7 +120,17 @@ div.gsc-control-cse.gsc-control-cse-en {
 
 #links {
   width:100%;
-  height:150px;
+  max-width: 100%;
+  height:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;    
+}
+
+#imagecontainer {
+  width:100%;
+  max-width: 100%;
+  height:auto;
   display:flex;
   align-items:center;
   justify-content:center;    
