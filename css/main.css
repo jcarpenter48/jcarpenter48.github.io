@@ -75,22 +75,22 @@ nav ul li, footer ul li {
 a {
     text-decoration: none;
     color: #8ff1ec;
-    font-family:'nsimsun';
+    font-family:'centauri';
 }
 a:hover {
     color: #adedff;
     text-decoration: none;
-    font-family:'nsimsun';
+    font-family:'centauri';
 }
 a:visited {
     color: #72f1ec;
     text-decoration: none;
-    font-family:'nsimsun';
+    font-family:'centauri';
 }
 a:- {
     color: #72f1ec;
     text-decoration: none;
-    font-family:'nsimsun';
+    font-family:'centauri';
 }
 h1 {
     font-size: 2.0em;
@@ -109,6 +109,7 @@ li {
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
+    font-family:'centauri';
 }
 
 ul.posts { 
