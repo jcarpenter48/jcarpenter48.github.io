@@ -89,10 +89,10 @@ h1 {
     font-family:'NSimSun';
 }
 p {
-
     font-size: 1.5em;
 	font-family:'NSimSun';
     line-height: 1.4em;
+    color: #dbfffe;
 }
 footer {
     border-top: 1px solid #d5d5d5;
