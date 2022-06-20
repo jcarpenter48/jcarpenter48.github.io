@@ -111,6 +111,26 @@ footer {
     font-size: .4em;
     font-family:'centauri';
 }
+footer.a {
+    text-decoration: none;
+    color: #8ff1ec;
+    font-family:'centauri';
+}
+footer.a:hover {
+    color: #adedff;
+    text-decoration: none;
+    font-family:'centauri';
+}
+footer.a:visited {
+    color: #72f1ec;
+    text-decoration: none;
+    font-family:'centauri';
+}
+footer.a:- {
+    color: #72f1ec;
+    text-decoration: none;
+    font-family:'centauri';
+}
 
 ul.posts { 
     margin: 20px auto 40px; 
