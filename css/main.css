@@ -117,3 +117,11 @@ div.gsc-control-cse.gsc-control-cse-en {
     background-color: #202020;
     border: 1px solid #202020;
 }
+
+#links {
+  width:100%;
+  height:150px;
+  display:flex;
+  align-items:center;
+  justify-content:center;    
+}
