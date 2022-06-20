@@ -93,7 +93,7 @@ a:- {
     font-family:'nsimsun';
 }
 h1 {
-    font-size: 2.2em;
+    font-size: 2.0em;
     font-family:'centauri';
 }
 p {
@@ -101,6 +101,10 @@ p {
 	font-family:'nsimsun';
     line-height: 1.4em;
     color: #dbfffe;
+}
+li {
+    font-family:'centauri';
+    font-size: 1.2em;
 }
 footer {
     border-top: 1px solid #d5d5d5;
@@ -132,8 +136,8 @@ img {
 }
 
 .links {
-  max-height: 500px;
-  max-width: 500px;
+  max-height: 100%;
+  max-width: 100%;
   height:auto;
   display:flex;
   align-items:center;
@@ -148,8 +152,8 @@ img {
 }
 
 .imagecontainer {
-  max-height: 500px;
-  max-width: 500px;
+  max-height: 100%;
+  max-width: 100%;
   height:auto;
   display:flex;
   align-items:center;
