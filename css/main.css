@@ -65,9 +65,13 @@ nav ul li, footer ul li {
 }
 a {
     text-decoration: none;
+    color: #8ff1ec;
 }
 a:hover {
-    text-decoration: underline;
+    color: #adedff;
+}
+a:visited {
+    color: #72f1ec;
 }
 h1 {
     font-size: 3em;
