@@ -117,7 +117,7 @@ div.gsc-control-cse.gsc-control-cse-en {
     border: 1px solid #202020;
 }
 
-#links {
+.links {
   width:100%;
   max-width: 100%;
   height:auto;
@@ -126,7 +126,7 @@ div.gsc-control-cse.gsc-control-cse-en {
   justify-content:center;    
 }
 
-#imagecontainer {
+.imagecontainer {
   width:100%;
   max-width: 100%;
   height:auto;
