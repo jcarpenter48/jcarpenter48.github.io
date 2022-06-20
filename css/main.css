@@ -75,25 +75,25 @@ nav ul li, footer ul li {
 a {
     text-decoration: none;
     color: #8ff1ec;
-    font-family:'centauri';
+    font-family:'nsimsun';
 }
 a:hover {
     color: #adedff;
     text-decoration: none;
-    font-family:'centauri';
+    font-family:'nsimsun';
 }
 a:visited {
     color: #72f1ec;
     text-decoration: none;
-    font-family:'centauri';
+    font-family:'nsimsun';
 }
 a:- {
     color: #72f1ec;
     text-decoration: none;
-    font-family:'centauri';
+    font-family:'nsimsun';
 }
 h1 {
-    font-size: 2.0em;
+    font-size: 1.5em;
     font-family:'centauri';
 }
 p {
@@ -108,7 +108,7 @@ li {
 }
 footer {
     border-top: 1px solid #d5d5d5;
-    font-size: .8em;
+    font-size: .4em;
     font-family:'centauri';
 }
 
