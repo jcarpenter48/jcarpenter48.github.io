@@ -140,6 +140,13 @@ img {
   justify-content:center;    
 }
 
+.links img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
 .imagecontainer {
   max-height: 500px;
   max-width: 500px;
