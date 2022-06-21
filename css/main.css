@@ -4,11 +4,11 @@
 }
 
 html {
-  background: url(images/bg.jpg) no-repeat center center fixed;
+  background: url(/css/background.gif) no-repeat center center fixed;
   background-size: cover;
   height: 100%;
   background-color: #202020;
-    font-family: centauri;
+    font-family: courier;
     color: #8ff1ec;
     text-shadow: 0 0 2px #aefff7, 0 0 4px #a5ddda;      
 }
@@ -37,8 +37,11 @@ page__content-container {
   padding: 30px;
 }
 body {
-    margin: 60px auto;
+    margin: 1% auto;
     width: 70%;
+    background-color: #202020;
+    border-radius: 25px;
+    padding: 20px;
 }
 #bg {
   position: fixed; 
@@ -75,22 +78,18 @@ nav ul li, footer ul li {
 a {
     text-decoration: none;
     color: #8ff1ec;
-    font-family:'nsimsun';
 }
 a:hover {
     color: #adedff;
     text-decoration: none;
-    font-family:'nsimsun';
 }
 a:visited {
     color: #72f1ec;
     text-decoration: none;
-    font-family:'nsimsun';
 }
 a:- {
     color: #72f1ec;
     text-decoration: none;
-    font-family:'nsimsun';
 }
 h1 {
     font-size: 1.5em;
@@ -98,7 +97,7 @@ h1 {
 }
 p {
     font-size: 1.5em;
-	font-family:'nsimsun';
+	font-family:courier;
     line-height: 1.4em;
     color: #dbfffe;
 }
@@ -110,6 +109,7 @@ footer {
     border-top: 1px solid #d5d5d5;
     font-size: .4em;
     font-family:'centauri';
+    font-size: 0.75em;
 }
 footer.a {
     text-decoration: none;
