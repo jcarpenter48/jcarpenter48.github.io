@@ -239,3 +239,10 @@ img:hover {
   padding: 20px;
   height: auto;	
 }
+.cheerpjLoading::before {
+  background-color: white;
+  border-radius: 25px;
+}
+div#cheerpjDisplay.status::after {
+  border-radius: 25px;
+}
