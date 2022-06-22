@@ -230,3 +230,12 @@ img:hover {
 ::selection {
   background: #777777;
 }
+
+#cheerpjDisplay {
+  margin: auto;
+  width: 70%;
+  background-color: #202020;
+  border-radius: 25px;
+  padding: 20px;
+  height: auto;	
+}
