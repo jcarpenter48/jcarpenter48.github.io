@@ -82,7 +82,7 @@ nav ul, footer ul {
 }
 nav ul li, footer ul li {
     display: inline;
-    margin-right: 20px;
+    margin: auto;
 }
 a {
     text-decoration: none;
@@ -112,14 +112,14 @@ p {
 }
 nav li {
     font-family:'centauri';
-    font-size: 0.6em;
+    font-size: 0.7em;
     background-color: #3e3e3e;
     border-radius: 25px;
     padding: 8px;
 }
 nav li:hover {
     font-family:'centauri';
-    font-size: 0.62em;
+    font-size: 0.72em;
     background-color: #777777;
     border-radius: 25px;
     padding: 8px;
