@@ -36,7 +36,7 @@ page__content-container {
   width: 975px;
   padding: 30px;
 }
-body {
+.bodycontainer {
     margin: 1% auto;
     width: 70%;
     background-color: #202020;
