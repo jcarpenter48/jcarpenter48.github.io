@@ -112,14 +112,14 @@ p {
 }
 nav li {
     font-family:'centauri';
-    font-size: 1.2em;
+    font-size: 0.6em;
     background-color: #3e3e3e;
     border-radius: 25px;
     padding: 8px;
 }
 nav li:hover {
     font-family:'centauri';
-    font-size: 1.2em;
+    font-size: 0.62em;
     background-color: #777777;
     border-radius: 25px;
     padding: 8px;
