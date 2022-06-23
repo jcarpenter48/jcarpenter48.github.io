@@ -2,6 +2,10 @@
     font-family: centauri;
     src: url(/css/centauri.ttf);
 }
+:root{
+    --thumbheight: 77px;
+    --thumbwidth: 100px
+}
 
 html {
   background: url(/css/background.gif) no-repeat center center fixed;
@@ -205,8 +209,8 @@ img:hover {
 .thumbnail {
   display: inline-block;
   object-fit: cover;
-  width: var(--thumbsize);
-  height: var(--thumbsize); 
+  width: var(--thumbwidth);
+  height: var(--thumbheight); 
   max-width: 100px;
   max-height: 100px;
   margin-left: unset;
@@ -215,8 +219,8 @@ img:hover {
 
 .thumbnail:hover {
     object-fit: cover;
-    width: var(--thumbsize);
-    height: var(--thumbsize); 
+    width: var(--thumbwidth);
+    height: var(--thumbheight); 
     max-width: 100px;
     max-height: 100px;
     border-radius: 25px;
