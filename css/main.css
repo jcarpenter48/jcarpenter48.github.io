@@ -204,6 +204,7 @@ img:hover {
 
 .thumbnail {
   display: inline-block;
+  object-fit: cover; 
   max-width: 100px;
   max-height: 100px;
   margin-left: unset;
@@ -211,6 +212,7 @@ img:hover {
 }
 
 .thumbnail:hover {
+   object-fit: cover;
     max-width: 100px;
     max-height: 100px;
     border-radius: 25px;
