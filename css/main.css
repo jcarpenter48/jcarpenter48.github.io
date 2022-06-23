@@ -202,6 +202,15 @@ img:hover {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
+.thumbnail {
+  display: inline-block;
+  max-width: 100px;
+  max-height: 100px;
+  margin-left: unset;
+  margin-right: 10px;
+}	
+}
+
 .links {
   max-height: 100%;
   max-width: 100%;
