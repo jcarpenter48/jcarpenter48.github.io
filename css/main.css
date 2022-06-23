@@ -208,7 +208,11 @@ img:hover {
   max-height: 100px;
   margin-left: unset;
   margin-right: 10px;
-}	
+}
+
+.thumblink {
+  display:flex;
+  align-items:center
 }
 
 .links {
