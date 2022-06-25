@@ -1,12 +1,12 @@
-title: bigbrainstudy
-email: bigbrainstudy@mail.com
+title: jcarpenter48
+email: jcarpenter48@mail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A freely accessible and completely usable educational resources website. 
   Get classwork and homework help and more without paying any subscription.
 baseurl: "/news" # the subpath of your site, e.g. /blog
-url: "https://bigbrainstudy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: bigbrainstudy
-github_username:  bigbrainstudy
+url: "https://jcarpenter48.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jcarpenter48
+github_username:  jcarpenter48
 
 # Where things are
 source              : .
