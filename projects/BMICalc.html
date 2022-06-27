@@ -35,7 +35,7 @@
     </nav>
     
 	<div class="bodycontainer">
-		<div class="container">
+		<div id="cheerpjcontainer" class="container">
     		<div class="blurb">
         		<h1>Simple Body Mass Index Calculator</h1>			   
     		</div><!-- /.blurb -->
@@ -43,7 +43,7 @@
 		  
 		  <script>
 		  cheerpjInit();
-		  cheerpjCreateDisplay(800,600);
+		  cheerpjCreateDisplay(800,600, cheerpjcontainer);
 		  cheerpjRunJar("/app/BMIcalc.jar"); 
 		  </script>
 		  
