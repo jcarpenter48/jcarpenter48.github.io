@@ -17,7 +17,19 @@
 	    <a href="/programming" style="font-family:'centauri';"><li>programming</li></a>
 	    <a href="/electronics" style="font-family:'centauri';"><li>electronics</li></a>
             <a href="/gamesandmods" style="font-family:'centauri';"><li>games & mods</li></a>
-	    <script async src="https://cse.google.com/cse.js?cx=aa9b364889fc2d733"></script>
+	    <script>
+	    (function() {
+		var cx = 'aa9b364889fc2d733';
+		var gcse = document.createElement('script');
+		gcse.type = 'text/javascript';
+		    gcse.async = true;
+		    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		    '//cse.google.com/cse.js?cx=' + cx;
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(gcse, s);
+		})();
+	    </script>
+	    <gcse:search resultsUrl="https://jcarpenter.tk/"        newWindow="true" queryParameterName="search">
 	    <div class="gcse-search"></div>
 	</ul>
     </nav>    
