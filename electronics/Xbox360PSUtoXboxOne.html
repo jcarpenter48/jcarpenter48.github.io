@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Xbox 360 PSU on Xbox One | jcarpenter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- favicon stuff -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+	</head>
+    <body>
+    <nav>
+	<ul>
+	    <a href="/" style="font-family:'centauri';"><li>home</li></a>
+	    <a href="/programming" style="font-family:'centauri';"><li>programming</li></a>
+	    <a href="/electronics" style="font-family:'centauri';"><li>electronics</li></a>
+            <a href="/gamesandmods" style="font-family:'centauri';"><li>games & mods</li></a>
+	    <script>
+	    (function() {
+		var cx = 'aa9b364889fc2d733';
+		var gcse = document.createElement('script');
+		gcse.type = 'text/javascript';
+		    gcse.async = true;
+		    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		    '//cse.google.com/cse.js?cx=' + cx;
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(gcse, s);
+		})();
+	    </script>
+	    <gcse:search resultsUrl="https://jcarpenter.tk/"        newWindow="true" queryParameterName="search">
+	    <div class="gcse-search"></div>
+	</ul>
+    </nav>    
+	<div class="bodycontainer">
+		<div class="container">
+    		<div class="blurb">
+        		<h1>Xbox 360 PSU on Xbox One</h1>
+                <p>
+                Not that long ago, my brother told me his launch model Xbox One would no longer power on. If he removed and plugged in the external power supply (remember the
+                launch model's brick?), he could get the console to beep and boop, but it would never stay powered on long enough to get to the home screen.
+                </p>
+                <p>
+                On the Xbox One's brick itself, an OEM PSU by Microsoft, the light would go from white (power okay) to orange or off (power nokay). Obviously, my first instinct
+                was to assume the power brick had gone bad, as many Xbox One power bricks have historically gone bad (correct conclusion). Even so, my brother and I were reluctant
+                shell out the $20 or so on a new power brick if that turned out not to be an issue, and we didn't know anybody who still had an original Xbox One power brick available
+                for testing purposes. 
+                </p>
+                <p>
+                Naturally, the preferred course of action in such circumstances would be to first (a) diagnose the existing unit and determine whether it did indeed fail, and (b)
+                devise and implement a cheaper solution.
+                </p>         
+                <div class "imagecontainer"><img src="/electronics/images/Xbox360PSUtoXboxOne/20220622_162928_HDR.jpg" alt="xboxoneoempsu" style="max-height: 100%; max-width: 100%;"> </div>
+                <p>
+                So I went ahead and cracked open the OEM PSU. First thing I wanted to do was verify that it was, indeed, a bad unit. Using my multimeter in voltmeter mode, I checked the 
+                5VSB rail while I had the PSU plugged in; all checked out. Next, I shorted 5VSB to the PWR_ON pin in order to trigger the 12V rail on; checking the 12V rail with the voltmeter,
+                I noted it never rising above ~3V, and then rapidly dropping to 0V after a few minutes.
+                </p>
+                <p>
+                Okay, pretty clear that the Xbox One OEM brick was no longer functional. So what next?
+                </p>
+                <p>
+                I could have either investigated further and likely found the capacitors in the OEM unit at fault, purchased replacements, and soldered them in, as many other folks have done.
+                But that's not all that interesting, nor would I have liked to spend money. So instead, I decided to use an old 360 Phat PSU from a first gen Xbox 360 that RROD'ed many moons ago.
+                </p>          
+                <div class "imagecontainer"><img src="/electronics/images/Xbox360PSUtoXboxOne/20220622_162433_HDR.jpg" alt="donor360psu" style="max-height: 100%; max-width: 100%;"> </div>
+                <p>
+                Behold, the donor for our surgical operation!
+                </p> 
+                <p>
+                From what I can gather, the Xbox PSU design hasn't really changed that much over the years: 5VSB and PWR_OK/PWR_ON, GND, and 12V, not much else going on. Even the LED behavior 
+                is pretty much the same. So, it should be a simple swap of the cable from the One PSU to the 360 PSU so long as the maximum rated current is close enough or greater on the new unit
+                (this is why I chose the old Phat PSU, it's quite beefy, both physically but also in what it can provide, comparable to the One PSU). I've heard folks use 360 Slim PSUs with the One
+                by nibbling away the plastic key, but I'm not sure how stable/safe that is considering the 360 Slim PSUs are not rated for nearly as much 12V amperage. But off we go!
+                </p> 
+                <p>
+                At first, I had some trouble getting the 360 brick apart because of the thermal compound used in it, but eventually I was able to overcome it. After that, I thought my job would soon 
+                be over, so I soldered up the 5VSB, PWR_OK, and 12V wires, as well as one of the GND bundles on the 360 PSU board to the GND wires on the One connector. This would be where I made a mistake.
+                </p>                
+                <p>
+                After putting the PSU back together (without screws, of course), I went to test it and... same behavior as before with the One PSU! Now I was wondering, was the console itself dead? I refused to 
+                believe that the console had died, so I looked to my handiwork for errors. I must have made a mistake.
+                </p>
+                <p>
+                And, of course, I had. After quite some puzzling and testing with a multimeter, I finally decided to try something I did not think was necessary at all.
+                </p> 
+                <p>
+                It turns out, even thoug my multimeter reported two GND points on the 360 PSU board were 'connected,' until I bridged them both to the One's GND connection, the PSU would not turn on its 12V rail
+                while connected to the console. An insanely simple fix, but one that I could not conceive of being necessary at the start of this simple project.
+                </p>
+                <p>
+                And with that, the mod was completed! I'm pretty happy with how it turned out. The replacement PSU still needs to be put through all its paces, but so far, it seems to work great and helped make
+                a launch model Xbox One usable again for the low, low price of $Free.99. For that, I'm quite satisfied.
+                </p>
+                <div class "imagecontainer"><img src="/electronics/images/Xbox360PSUtoXboxOne/20220630_194044_HDR.jpg" alt="FinalFrankenPSU" style="max-height: 100%; max-width: 100%;"> </div>
+                <p> </p>
+                <p> </p>
+    		</div><!-- /.blurb -->
+		</div><!-- /.container -->
+		<script data-ad-client="ca-pub-5897349726266398" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- jcarpenter48_default_recommended -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-5897349726266398"
+			 data-ad-slot="6294109400"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>		
+		<footer>
+    		<ul>
+        		<li><a href="mailto:jcarpenter48@mail.com">email</a></li>
+        		<li><a>© Copyright 2022 jcarpenter48</a></li>
+			</ul>
+		</footer>
+	</div>
+    </body>
+</html>
