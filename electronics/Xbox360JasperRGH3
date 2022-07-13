@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Xbox 360 Jasper RGH3 | jcarpenter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- favicon stuff -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+	</head>
+    <body>
+    <nav>
+	<ul>
+	    <a href="/" style="font-family:'centauri';"><li>home</li></a>
+	    <a href="/programming" style="font-family:'centauri';"><li>programming</li></a>
+	    <a href="/electronics" style="font-family:'centauri';"><li>electronics</li></a>
+            <a href="/gamesandmods" style="font-family:'centauri';"><li>games & mods</li></a>
+	    <script>
+	    (function() {
+		var cx = 'aa9b364889fc2d733';
+		var gcse = document.createElement('script');
+		gcse.type = 'text/javascript';
+		    gcse.async = true;
+		    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		    '//cse.google.com/cse.js?cx=' + cx;
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(gcse, s);
+		})();
+	    </script>
+	    <gcse:search resultsUrl="https://jcarpenter.tk/"        newWindow="true" queryParameterName="search">
+	    <div class="gcse-search"></div>
+	</ul>
+    </nav>    
+	<div class="bodycontainer">
+		<div class="container">
+    		<div class="blurb">
+        		<h1>Xbox 360 Jasper RGH3</h1>
+                <p>
+                2022-07-14
+                </p>
+                <p>
+                I'd been enjoying my modded OG Xbox when I lucked into getting a Jasper Xbox 360 from a friend who no longer had any use for it that was in quite good condition. Having
+                never experienced a modded Xbox 360 before, I decided to try the recently released RGH3 reset glitch hack for the console so I could use it as a lighter, newer, sleeker alternative
+                to my OG Xbox when traveling or moving about.
+                </p> 
+                <div class "imagecontainer"><img src="/electronics/images/Xbox360JasperRGH3/20220701_205317_HDR.jpg" alt="ConsoleMotherboard" style="max-height: 100%; max-width: 100%;"> </div>
+                <p>
+                RGH3 for a Jasper requires only two conductors, a diode, and resistor and a board of one's choice to flash the console's NAND; I chose the Pi Pico since it was cheap and I could reuse it for other projects. So with the console disassembled,
+                I set to work wiring things up.
+                </p>
+                <div class "imagecontainer"><img src="/electronics/images/Xbox360JasperRGH3/20220701_224955_HDR.jpg " alt="SMCWiring1" style="max-height: 100%; max-width: 100%;"> </div>
+                <div class "imagecontainer"><img src="/electronics/images/Xbox360JasperRGH3/20220701_225009_HDR.jpg " alt="SMCWiring2" style="max-height: 100%; max-width: 100%;"> </div>
+                <p>
+                The SMC points  were wired up with 28AWG wire and a 1n4148 diode with the cathode end pointing to the POST point (towards the front of the console). This would not prove troublesome,
+                though I did wrap this wire in some grounded 34AWG magnet wire later for precautionary shielding.
+                </p>
+                <div class "imagecontainer"><img src="/electronics/images/Xbox360JasperRGH3/20220701_221215_HDR.jpg" alt="NANDWired" style="max-height: 100%; max-width: 100%;"> </div>
+                <div class "imagecontainer"><img src="/electronics/images/Xbox360JasperRGH3/20220701_211211_HDR.jpg " alt="BadPLLWiring" style="max-height: 100%; max-width: 100%;"> </div>
+                <p>
+                For the 22k ohm resistor recommended for most Jasper's, I wired 4 5.5k ohm resistors in series (the yellow package). Here I made a mistake that proved troublesome, using unshielded 34AWG
+                magnet wire for the PLL wiring as well as using the topside PLL point, a longer route. With the precision required by RGH, I'm not surprised that these mistakes caused freezing and
+                instability after I buttoned the console back up, rendering gameplay impossible. This, of course, was rectified later, but is documented here as reminder to always use proper gauge and shorter routes.
+                </p>                
+                <div class "imagecontainer"><img src="/electronics/images/Xbox360JasperRGH3/20220701_221201_HDR.jpg " alt="NANDReadFlash" style="max-height: 100%; max-width: 100%;"> </div>
+                <p>
+                After everything was soldered up, I read the NAND (twice) using JRunner with Extras, created and wrote the new glitched ECC, and then created and flashed the new XeBuild image.
+                </p>              
+                <div class "imagecontainer"><img src="/electronics/images/Xbox360JasperRGH3/20220703_140424_HDR.jpg" alt="BootingIntoXell" style="max-height: 100%; max-width: 100%;"> </div>
+                <p>
+                Ah, success! The console booted into Xell successfully after a brief scare before realizing my power strip wasn't turned on.
+                </p>
+                <div class "imagecontainer"><img src="/electronics/images/Xbox360JasperRGH3/20220708_190041_HDR.jpg" alt="Wiring1" style="max-height: 100%; max-width: 100%;"> </div>
+                <div class "imagecontainer"><img src="/electronics/images/Xbox360JasperRGH3/20220708_190024_HDR.jpg " alt="Wiring2" style="max-height: 100%; max-width: 100%;"> </div>
+                <div class "imagecontainer"><img src="/electronics/images/Xbox360JasperRGH3/20220708_190054_HDR.jpg " alt="Wiring3" style="max-height: 100%; max-width: 100%;"> </div>
+                <p>
+                Like I said previously, I ran into freezing and instability after the first go at the mod, so I went back and redid all the wiring. With 28AWG and shorter routes, along with some shielding,
+                everything after that played just fine.
+                </p>
+                <p>I'm quite happy with how this turned out and believe I'll get a lot of utility out of having an RGH3 Xbox 360. Unlike the OG Xbox, transferring files via USB is much more
+                feasible for quick tests without firing up an FTP transfer, enabling me to test OG Xbox game mods and homebrew a lot more quickly. This will render it a quite nice development box.
+                </p>
+                <p>
+                And, as an entertainment machine, it's still an Xbox 360, so with hacked back-compat files, I have access to a plethora of great Xbox and Xbox 360 games that I can enjoy comfortably 
+                with wireless controllers and HD visuals. Now I won't have to lug the entire OG Xbox setup around to other folk's houses!</p>
+    		</div><!-- /.blurb -->
+		</div><!-- /.container -->
+		<script data-ad-client="ca-pub-5897349726266398" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- jcarpenter48_default_recommended -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-5897349726266398"
+			 data-ad-slot="6294109400"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>		
+		<footer>
+    		<ul>
+        		<li><a href="mailto:jcarpenter48@mail.com">email</a></li>
+        		<li><a>© Copyright 2022 jcarpenter48</a></li>
+			</ul>
+		</footer>
+	</div>
+    </body>
+</html>
