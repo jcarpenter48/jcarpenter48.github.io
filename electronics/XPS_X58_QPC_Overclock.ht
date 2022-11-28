@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>XPS 435T/9000 RI0707 Overclocking | jcarpenter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- favicon stuff -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+	</head>
+    <body>
+    <nav>
+	<ul>
+	    <a href="/" style="font-family:'centauri';"><li>home</li></a>
+	    <a href="/programming" style="font-family:'centauri';"><li>programming</li></a>
+	    <a href="/electronics" style="font-family:'centauri';"><li>electronics</li></a>
+            <a href="/gamesandmods" style="font-family:'centauri';"><li>games & mods</li></a>
+	    <script>
+	    (function() {
+		var cx = 'aa9b364889fc2d733';
+		var gcse = document.createElement('script');
+		gcse.type = 'text/javascript';
+		    gcse.async = true;
+		    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		    '//cse.google.com/cse.js?cx=' + cx;
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(gcse, s);
+		})();
+	    </script>
+	    <gcse:search resultsUrl="https://jcarpenter.tk/"        newWindow="true" queryParameterName="search">
+	    <div class="gcse-search"></div>
+	</ul>
+    </nav>    
+	<div class="bodycontainer">
+		<div class="container">
+    		<div class="blurb">
+        		<h1>Xbox 360 Jasper RGH3</h1>
+                <p>
+                2022-07-14
+                </p>
+                <p>
+                Recently, I set up a computer for a relative of mine based on the X58 platform using a Dell Studio XPS 435T/9000 motherboard with model number RI0707 and a Xeon X5675 as the CPU.
+                I'd always heard great things about X58 overclocking on enthusiast motherboards, so naturally I was curious to see if the old SetFSB tricks to overclock OEM motherboard that I used
+                on other Dell systems would be applicable here, even if the X58 platform worked differently from its predecessors.
+                </p> 
+                <div class "imagecontainer"><img src="/electronics/images/x58_overclocking/capture_after.PNG" alt="FinalSettings" style="max-height: 100%; max-width: 100%;"> </div>
+                <p>
+                Unfortunately, even if SetFSB does manage an overclock here, it does not manage a very substantial one, achieving a stable overclock of not even 100MHz on the CPU. But hey, performance is performance.
+                </p>
+                <div class "imagecontainer"><img src="/electronics/images/x58_overclocking/before_cpuz_results.png " alt="BeforeOverclock" style="max-height: 100%; max-width: 100%;"> </div>
+                <div class "imagecontainer"><img src="/electronics/images/x58_overclocking/after_cpuz_results.png " alt="AfterOverclock" style="max-height: 100%; max-width: 100%;"> </div>
+                <p>
+                In order to overclock this motherboard, I did, as mentioned, use SetFSB, and performed the steps as follows:
+                </p>
+                <div class "imagecontainer"><img src="/electronics/images/x58_overclocking/capture_before.png " alt="InitialSettings" style="max-height: 100%; max-width: 100%;"> </div>
+                <p>
+                1. After launching (in my case I had to use admin privileges), I had to select QPC for the 'Current CPU Frequency: Internal' selection.
+                </p>
+                <p>
+                2. For the clock generator, I used ICS9LPRS113AKLF, the PLL for this particularly motherboard, although I have heard some others say theirs used a different PLL chip, so check
+                  your board; your mileage may vary here. 
+                </p>
+                <p>
+                3. Hit the 'Get FSB' button for the software to detect frequency information
+                </p>
+                <div class "imagecontainer"><img src="/electronics/images/x58_overclocking/after_cpuz_results.png " alt="Settings" style="max-height: 100%; max-width: 100%;"> </div>
+                <p>
+                4. Go up by a step on the upper slider (one click on the right arrow) and hit 'Set FSB,' test CPU stability, and repeat. In my case, I only achieved 3 steps, moving the slider from
+                83/760 to 86/760.
+                </p>
+                <p>
+                5. Enjoy the not-quite-100MHz overclock on the X5675.
+                </p>
+                <div class "imagecontainer"><img src="/electronics/images/x58_overclocking/capture_after.PNG" alt="FinalSettings" style="max-height: 100%; max-width: 100%;"> </div>
+                <p>
+                As one can see from the CPU-Z benchmark results previously, there was a slight multicore performance increase that was consistent and measurable, but not very substantial. Is this overclock worth it? I would say so, however minor, but one should not purchase
+                these Dell boards as a cheap entry to the X58 platform hoping to overclock much.
+                </p>
+    		</div><!-- /.blurb -->
+		</div><!-- /.container -->
+		<script data-ad-client="ca-pub-5897349726266398" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- jcarpenter48_default_recommended -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-5897349726266398"
+			 data-ad-slot="6294109400"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>		
+		<footer>
+    		<ul>
+        		<li><a href="mailto:jcarpenter48@mail.com">email</a></li>
+        		<li><a>© Copyright 2022 jcarpenter48</a></li>
+			</ul>
+		</footer>
+	</div>
+    </body>
+</html>
