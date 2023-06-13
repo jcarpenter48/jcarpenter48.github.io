@@ -300,14 +300,14 @@ footer > ul> li > a {
 }
 footer > ul > li:nth-child(1) > a:after {
   visibility: visible;
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
-  content: "";
+  content: "Email";
 }
 footer > ul > li:nth-child(2) > a:after {
   visibility: visible;
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   content: "© Copyright 2023 jcarpenter48";
