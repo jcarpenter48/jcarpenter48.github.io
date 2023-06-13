@@ -2,6 +2,10 @@
     font-family: centauri;
     src: url(/css/centauri.ttf);
 }
+@font-face {
+    font-family: jupiter;
+    src: url(/css/Jupiter.ttf);
+}
 :root{
     --thumbheight: 77px;
     --thumbwidth: 100px;
@@ -281,4 +285,7 @@ img:hover {
 }
 div#cheerpjDisplay.status::after {
   border-radius: 25px;
+}
+#___gcse_0 {
+  display: none;
 }
