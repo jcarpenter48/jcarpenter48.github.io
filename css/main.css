@@ -13,12 +13,17 @@
 
 html {
   background: url(/css/background.gif) no-repeat center center fixed;
+  /* background: linear-gradient(0deg, rgba(36, 36, 85, 0.5),  rgba(36, 36, 85, 0.5)), url(/css/background.gif) no-repeat center center fixed; */
   background-size: cover;
   height: 100%;
   background-color: #242455;
     font-family: jupiter;
     color: #8ff1ec;
-    text-shadow: 0 0 2px #aefff7, 0 0 4px #a5ddda;      
+    text-shadow: 0 0 2px #aefff7, 0 0 4px #a5ddda;    
+    /* testing fade in of pages */
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 header {
@@ -312,6 +317,16 @@ footer > ul > li:nth-child(2) > a:after {
   left: 0;
   content: "© Copyright 2023 jcarpenter48";
 }
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+/* mobile styling */
 @media only screen and (max-width: 811px) {
     nav {
       margin: 1% auto;
