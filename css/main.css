@@ -76,6 +76,7 @@ nav {
   margin: auto; 
   min-width: 50%;
   min-height: 50%;
+  loading="lazy"	
 }
 
 #blurb {
@@ -197,6 +198,7 @@ img {
     display:block;
     margin-left: auto;
     margin-right: auto;
+    loading="lazy"
 }
 img:hover {
     max-width: 100%;
@@ -209,6 +211,7 @@ img:hover {
     transition-property: transform;
     transform: scale(1.15);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    loading="lazy"
 }
 
 .thumbnail {
@@ -257,6 +260,7 @@ img:hover {
   margin-left: auto;
   margin-right: auto;
   width: 70%;
+  loading="lazy"
 }
 
 .imagecontainer {
