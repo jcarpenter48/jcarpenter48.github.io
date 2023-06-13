@@ -312,7 +312,7 @@ footer > ul > li:nth-child(2) > a:after {
   left: 0;
   content: "© Copyright 2023 jcarpenter48";
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 811px) {
     nav {
       margin: 1% auto;
       width: 95%;
