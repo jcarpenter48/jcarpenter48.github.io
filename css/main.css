@@ -19,7 +19,8 @@ html {
   background-color: #242455;
     font-family: jupiter;
     color: #8ff1ec;
-    text-shadow: 0 0 2px #aefff7, 0 0 4px #a5ddda;    
+    /* text-shadow: 0 0 2px #aefff7, 0 0 4px #a5ddda; */
+    text-shadow: #dbfffe 1px 0 15px;
     /* testing fade in of pages */
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
