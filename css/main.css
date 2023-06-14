@@ -124,6 +124,7 @@ p {
 	font-family:jupiter;
     line-height: 1.4em;
     color: #dbfffe;
+    text-shadow: #dbfffe 1px 0 15px;
 }
 nav li {
     font-family:'centauri';
