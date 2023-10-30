@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PC Temperature and Diagnostics Display | jcarpenter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- favicon stuff -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+	</head>
+    <body>
+    <nav>
+	<ul>
+	    <a href="/" style="font-family:'centauri';"><li>home</li></a>
+	    <a href="/programming" style="font-family:'centauri';"><li>programming</li></a>
+	    <a href="/electronics" style="font-family:'centauri';"><li>electronics</li></a>
+            <a href="/gamesandmods" style="font-family:'centauri';"><li>games & mods</li></a>
+	    <script>
+	    (function() {
+		var cx = 'aa9b364889fc2d733';
+		var gcse = document.createElement('script');
+		gcse.type = 'text/javascript';
+		    gcse.async = true;
+		    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		    '//cse.google.com/cse.js?cx=' + cx;
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(gcse, s);
+		})();
+	    </script>
+	    <gcse:search resultsUrl="https://jcarpenter.tk/"        newWindow="true" queryParameterName="search">
+	    <div class="gcse-search"></div>
+	</ul>
+    </nav>    
+	<div class="bodycontainer">
+		<div class="container">
+    		<div class="blurb">
+        		<h1>XPS 435T/9000 RI0707 Overclocking</h1>
+                <p>
+                2023-04-12
+                </p>
+                <p>
+                I salvaged a GC-6052S segment display from an old alarm clock quite some time ago, and I finally decided to put it to use as a temperature readout display for my computer. The components of this project were threefold: first, write the embedded program on an arduino to talk to the display; second, write the tray application to talk to the arduino; third, design and print a bracket to hold the display.
+                </p> 
+                <div class "imagecontainer"><img src="/electronics/images/TempDisplay/image.png" alt="DisplaySpecs" style="max-height: 100%; max-width: 100%;"> </div>
+                <p>
+                Thankfully, I was able to find some resources online that helped simplify this project, one that documented displays like the GC-6502s, an example project in the same vein, and of course, not least, the OpenHardwareMonitor project, which allowed me to easily write a tray application to send serial data to the Arduino for stats monitoring.
+                </p>
+                <div class "imagecontainer"><img src="/electronics/images/TempDisplay/20230412_183309.jpg " alt="Results1" style="max-height: 100%; max-width: 100%;"> </div>
+                <div class "imagecontainer"><img src="/electronics/images/TempDisplay/20230412_183314.jpg " alt="Results2" style="max-height: 100%; max-width: 100%;"> </div>
+                  <video width="320" height="240" controls>
+                    <source src="/electronics/images/TempDisplay/20230408_181726.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video> 
+                <p>
+                I have since evolved this project more, and must add some more details of the project when I have time. -10/2023
+                </p>
+    		</div><!-- /.blurb -->
+		</div><!-- /.container -->
+		<script data-ad-client="ca-pub-5897349726266398" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- jcarpenter48_default_recommended -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-5897349726266398"
+			 data-ad-slot="6294109400"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>		
+		<footer>
+    		<ul>
+        		<li><a href="mailto:jcarpenter48@mail.com">email</a></li>
+        		<li><a>© Copyright 2023 jcarpenter48</a></li>
+			</ul>
+		</footer>
+	</div>
+    </body>
+</html>
